@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::API
+  require "auth"
+
   protected
 
   def render_json_api(resource, options = {})
