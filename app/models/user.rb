@@ -8,4 +8,6 @@ class User < ApplicationRecord
   validates :name,  presence: true, length: { maximum: 255 }
   validates :email, presence: true, length: { maximum: 255 }, format: { with: EMAIL_REGEX }, uniqueness: { case_sensitive: false }
   validates :password, presence: true, length: { minimum: 6, maximum: 128 }
+
+  scope :other_users, ->(current_user_id) { where.not(id: current_user_id) }
 end

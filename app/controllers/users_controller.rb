@@ -1,4 +1,11 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user, only: :index
+
+  def index
+    users = User.other_users(current_user.id)
+    render_success(:ok, users, meta: { message: "User list has been successfully fetched." })
+  end
+
   def create
     user = User.new(user_params)
 

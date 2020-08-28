@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root "home#index"
 
+  resources :users, only: :index
+
   post "/signup", to: "users#create"
   post "/login",  to: "sessions#create"
 
