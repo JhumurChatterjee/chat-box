@@ -13,6 +13,7 @@ gem "rack-cors", "~> 1.1", ">= 1.1.1"
 gem "rails", "~> 6.0", ">= 6.0.2.2"
 
 group :development, :test do
+  gem "faker", "~> 2.13"
   gem "pry-rails", "~> 0.3.9"
 end
 
