@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  root "home#index"
+  root 'home#index'
 
   resources :users, only: :index
-  resources :messages, only: [:index, :create]
+  resources :messages, only: %i[index create]
 
-  post "/signup", to: "users#create"
-  post "/login",  to: "sessions#create"
+  post '/signup', to: 'users#create'
+  post '/login',  to: 'sessions#create'
 
-  get  "/auth",   to: "home#authenticate"
+  get  '/auth',   to: 'home#authenticate'
 end
