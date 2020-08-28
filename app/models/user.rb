@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_secure_password
   EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i.freeze
 
+  before_validation { name.to_s.squish.downcase! }
   before_validation { email.to_s.squish.downcase! }
 
   validates :name,  presence: true, length: { maximum: 255 }

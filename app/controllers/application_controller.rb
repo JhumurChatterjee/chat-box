@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::API
   require "auth"
 
+  include UnderscoreizeParams
+
   rescue_from ActiveRecord::RecordNotFound, with: :not_found!
 
   protected

@@ -6,7 +6,7 @@ class UsersController < ApplicationController
       jwt_token = Auth.issue(user: user.id)
       render_success(:created, user, meta: { jwt_token: jwt_token, message: "User has been successfully created." })
     else
-      render_error(:unprocessable_entity, user.errors)
+      render_error(:unprocessable_entity, user.errors.full_messages)
     end
   end
 
