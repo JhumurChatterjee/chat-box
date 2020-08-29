@@ -6,6 +6,7 @@ ruby "2.6.6"
 gem "active_model_serializers", "~> 0.10.10"
 gem "bcrypt", "~> 3.1", ">= 3.1.15"
 gem "bootsnap", "~> 1.4", ">= 1.4.8"
+gem "faker", "~> 2.13"
 gem "jwt", "~> 2.2", ">= 2.2.2"
 gem "pg", "~> 1.2", ">= 1.2.3"
 gem "puma", "~> 4.3", ">= 4.3.5"
@@ -13,7 +14,6 @@ gem "rack-cors", "~> 1.1", ">= 1.1.1"
 gem "rails", "~> 6.0", ">= 6.0.2.2"
 
 group :development, :test do
-  gem "faker", "~> 2.13"
   gem "pry-rails", "~> 0.3.9"
 end
 
